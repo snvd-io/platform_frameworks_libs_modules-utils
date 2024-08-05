@@ -57,7 +57,8 @@ public final class DeviceSdkLevel {
 
     /** Checks if the device is running on a (pre-)release version of Android V or newer. */
     public boolean isDeviceAtLeastV() throws DeviceNotAvailableException {
-        return device.getApiLevel() >= 34 && isDeviceAtLeastPreReleaseCodename("VanillaIceCream");
+        return device.getApiLevel() >= 35 ||
+               (device.getApiLevel() == 34 && isDeviceAtLeastPreReleaseCodename("VanillaIceCream"));
     }
 
     private boolean isDeviceAtLeastPreReleaseCodename(@NonNull String codename)
