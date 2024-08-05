@@ -65,9 +65,9 @@ public final class SdkLevel {
     }
 
     /** Checks if the device is running on a pre-release version of Android V or newer */
-    @ChecksSdkIntAtLeast(codename = "VanillaIceCream")
+    @ChecksSdkIntAtLeast(api = 35, codename = "VanillaIceCream")
     public static boolean isAtLeastV() {
-        return SDK_INT >= 34 && isAtLeastPreReleaseCodename("VanillaIceCream");
+        return SDK_INT >= 35 || (SDK_INT == 34 && isAtLeastPreReleaseCodename("VanillaIceCream"));
     }
 
     private static boolean isAtLeastPreReleaseCodename(@NonNull String codename) {
